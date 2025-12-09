@@ -131,6 +131,19 @@ class KR_License_Manager {
 	}
 
 	/**
+	 * Get license key
+	 *
+	 * @return string|false
+	 */
+	public function get_license_key() {
+		$license_data = $this->get_license_data();
+		if ( ! $license_data || empty( $license_data['key'] ) ) {
+			return false;
+		}
+		return $license_data['key'];
+	}
+
+	/**
 	 * Check if license is active
 	 *
 	 * @return bool

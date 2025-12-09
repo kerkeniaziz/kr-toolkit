@@ -4,7 +4,7 @@
  *
  * @package KR_Toolkit
  * @since 4.2.1
- * @author Aziz Kerkeni
+ * @author krtheme.com
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

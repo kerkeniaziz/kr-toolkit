@@ -28,7 +28,7 @@ $is_license_active = $license_manager->is_license_active();
 				<span class="dashicons dashicons-download"></span>
 			</div>
 			<h3><?php esc_html_e( 'Import Demo', 'kr-toolkit' ); ?></h3>
-			<p><?php esc_html_e( 'Import pre-built starter templates with one click. Choose from free and pro demos.', 'kr-toolkit' ); ?></p>
+			<p><?php esc_html_e( 'Import pre-built starter templates with one click. Choose from curated free demos.', 'kr-toolkit' ); ?></p>
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=kr-toolkit-demos' ) ); ?>" class="button button-primary">
 				<?php esc_html_e( 'Browse Demos', 'kr-toolkit' ); ?>
 			</a>

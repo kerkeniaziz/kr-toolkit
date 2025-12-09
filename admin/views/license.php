@@ -38,10 +38,16 @@ $is_active = $license_manager->is_license_active();
 					</p>
 					<div style="margin-top: 15px; font-size: 14px; color: #16a34a;">
 						<strong><?php esc_html_e( 'License Type:', 'kr-toolkit' ); ?></strong> 
-						<?php echo esc_html( ucfirst( $license_data['type'] ) ); ?>
+						<?php echo esc_html( isset( $license_data['license_type'] ) ? ucfirst( $license_data['license_type'] ) : 'Regular' ); ?>
 						<span style="margin: 0 10px;">|</span>
 						<strong><?php esc_html_e( 'Expires:', 'kr-toolkit' ); ?></strong> 
-						<?php echo esc_html( $license_data['expires'] ); ?>
+						<?php 
+						if ( isset( $license_data['expires_at'] ) && ! empty( $license_data['expires_at'] ) ) {
+							echo esc_html( date_i18n( get_option( 'date_format' ), strtotime( $license_data['expires_at'] ) ) );
+						} else {
+							esc_html_e( 'Never', 'kr-toolkit' );
+						}
+						?>
 					</div>
 				</div>
 				<button class="button button-secondary kr-deactivate-license">

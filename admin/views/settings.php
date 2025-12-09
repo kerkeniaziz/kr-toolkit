@@ -21,8 +21,13 @@ $auto_update_plugin = get_option( 'kr_auto_update_plugin', '1' );
 $auto_update_theme = get_option( 'kr_auto_update_theme', '1' );
 ?>
 
-<div class="wrap kr-toolkit-settings">
+<div class="wrap kr-toolkit-admin">
 	<h1><?php esc_html_e( 'KR Toolkit Settings', 'kr-toolkit' ); ?></h1>
+	
+	<div class="kr-toolkit-welcome">
+		<h2><?php esc_html_e( 'Settings & Configuration', 'kr-toolkit' ); ?></h2>
+		<p><?php esc_html_e( 'Manage automatic updates and configure your theme and plugin settings.', 'kr-toolkit' ); ?></p>
+	</div>
 	
 	<div class="kr-settings-container">
 		<div class="kr-settings-content">
@@ -131,11 +136,11 @@ $auto_update_theme = get_option( 'kr_auto_update_theme', '1' );
 			</div>
 			
 			<div class="kr-card">
-				<h3><?php esc_html_e( 'Update Sources', 'kr-toolkit' ); ?></h3>
-				<p><strong><?php esc_html_e( 'Plugin:', 'kr-toolkit' ); ?></strong><br>
-				<a href="https://github.com/kerkeniaziz/kr-toolkit/releases" target="_blank">GitHub Releases</a></p>
-				<p><strong><?php esc_html_e( 'Theme:', 'kr-toolkit' ); ?></strong><br>
-				<a href="https://github.com/kerkeniaziz/kr-theme/releases" target="_blank">GitHub Releases</a></p>
+				<h3><?php esc_html_e( 'Resources', 'kr-toolkit' ); ?></h3>
+				<p><strong><?php esc_html_e( 'Documentation:', 'kr-toolkit' ); ?></strong><br>
+				<a href="https://krtheme.com/docs" target="_blank">https://krtheme.com/docs</a></p>
+				<p><strong><?php esc_html_e( 'Support:', 'kr-toolkit' ); ?></strong><br>
+				<a href="https://krtheme.com/support" target="_blank">https://krtheme.com/support</a></p>
 			</div>
 		</div>
 	</div>

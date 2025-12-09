@@ -23,6 +23,38 @@ class KR_Child_Theme_Manager {
 	private $parent_theme = 'kr-theme';
 
 	/**
+	 * Check if a child theme exists and is active
+	 *
+	 * @return bool
+	 */
+	public function has_child_theme() {
+		$current_theme = wp_get_theme();
+		return ( $current_theme->get_template() === $this->parent_theme && $current_theme->get_stylesheet() !== $this->parent_theme );
+	}
+
+	/**
+	 * Get active child theme information
+	 *
+	 * @return array|null
+	 */
+	public function get_child_theme_info() {
+		if ( ! $this->has_child_theme() ) {
+			return null;
+		}
+
+		$theme = wp_get_theme();
+		return array(
+			'name'        => $theme->get( 'Name' ),
+			'folder'      => $theme->get_stylesheet(),
+			'version'     => $theme->get( 'Version' ),
+			'description' => $theme->get( 'Description' ),
+			'author'      => $theme->get( 'Author' ),
+			'template'    => $theme->get_template(),
+			'path'        => $theme->get_stylesheet_directory(),
+		);
+	}
+
+	/**
 	 * Create child theme
 	 *
 	 * @param string $theme_name Child theme name.

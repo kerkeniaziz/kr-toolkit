@@ -48,11 +48,11 @@ $import_warning = get_transient( 'kr_toolkit_import_warning' );
 	</div>
 
 	<!-- Filter Tabs -->
-	<div class="kr-demo-filters" style="margin: 30px 0;">
-		<button class="button" data-filter="all"><?php esc_html_e( 'All Demos', 'kr-toolkit' ); ?></button>
-		<button class="button" data-filter="free"><?php esc_html_e( 'Free', 'kr-toolkit' ); ?></button>
+	<div class="kr-demo-filter">
+		<button class="active" data-filter="all"><?php esc_html_e( 'All Demos', 'kr-toolkit' ); ?></button>
+		<button data-filter="free"><?php esc_html_e( 'Free', 'kr-toolkit' ); ?></button>
 		<?php if ( $is_license_active ) : ?>
-			<button class="button" data-filter="pro"><?php esc_html_e( 'Pro', 'kr-toolkit' ); ?></button>
+			<button data-filter="pro"><?php esc_html_e( 'Pro', 'kr-toolkit' ); ?></button>
 		<?php endif; ?>
 	</div>
 
@@ -70,30 +70,27 @@ $import_warning = get_transient( 'kr_toolkit_import_warning' );
 				$screenshot = isset( $demo['screenshot'] ) ? KR_TOOLKIT_URL . 'demos/' . $demo_slug . '/' . $demo['screenshot'] : KR_TOOLKIT_URL . 'assets/images/demo-placeholder.png';
 				?>
 				<div class="kr-demo-card" data-category="<?php echo $is_pro ? 'pro' : 'free'; ?>">
-					<div class="kr-demo-image">
+					<div class="kr-demo-card-image">
 						<img src="<?php echo esc_url( $screenshot ); ?>" alt="<?php echo esc_attr( $demo_name ); ?>" loading="lazy">
-						<div class="kr-demo-overlay">
-							<a href="<?php echo esc_url( $demo_url ); ?>" target="_blank" rel="noopener" class="button">
-								<?php esc_html_e( 'Preview', 'kr-toolkit' ); ?>
-							</a>
-						</div>
+						<?php if ( $is_pro ) : ?>
+							<span class="kr-demo-card-badge pro"><?php esc_html_e( 'Pro', 'kr-toolkit' ); ?></span>
+						<?php else : ?>
+							<span class="kr-demo-card-badge"><?php esc_html_e( 'Free', 'kr-toolkit' ); ?></span>
+						<?php endif; ?>
 					</div>
-					<div class="kr-demo-content">
-						<span class="kr-demo-badge <?php echo $is_pro ? 'pro' : 'free'; ?>">
-							<?php echo $is_pro ? esc_html__( 'Pro', 'kr-toolkit' ) : esc_html__( 'Free', 'kr-toolkit' ); ?>
-						</span>
-						<h3 class="kr-demo-title"><?php echo esc_html( $demo_name ); ?></h3>
-						<p><?php echo esc_html( $demo_description ); ?></p>
+					<div class="kr-demo-card-content">
+						<h3 class="kr-demo-card-title"><?php echo esc_html( $demo_name ); ?></h3>
+						<p class="kr-demo-card-description"><?php echo esc_html( $demo_description ); ?></p>
 						
 						<?php if ( isset( $demo['features'] ) && is_array( $demo['features'] ) ) : ?>
-							<ul class="kr-demo-features" style="font-size: 13px; color: #64748b; list-style: none; padding: 0; margin: 10px 0;">
+							<div class="kr-demo-card-features">
 								<?php foreach ( array_slice( $demo['features'], 0, 3 ) as $feature ) : ?>
-									<li style="padding: 3px 0;">✓ <?php echo esc_html( $feature ); ?></li>
+									<span><?php echo esc_html( $feature ); ?></span>
 								<?php endforeach; ?>
-							</ul>
+							</div>
 						<?php endif; ?>
 						
-						<div class="kr-demo-actions">
+						<div class="kr-demo-card-actions">
 							<?php if ( $can_import ) : ?>
 								<button class="button button-primary kr-import-demo" data-demo-slug="<?php echo esc_attr( $demo_slug ); ?>">
 									<span class="dashicons dashicons-download"></span>
