@@ -76,32 +76,31 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		/**
 		 * Include Files - Load in correct order with error handling
 		 */
-		private function includes() {
-			// Core classes
-			$this->include_file( 'classes/class-kr-system-check.php' );
-			$this->include_file( 'classes/class-kr-importer.php' );
-			$this->include_file( 'classes/class-kr-batch-processor.php' );
-			$this->include_file( 'classes/class-kr-error-handler.php' );
-			$this->include_file( 'classes/class-kr-child-theme.php' );
-			
-			// Library classes
-			$this->include_file( 'lib/class-kr-helper.php' );
-			$this->include_file( 'lib/class-kr-api.php' );
-			
-			// Importers
-			$this->include_file( 'importers/class-kr-wp-importer.php' );
-			$this->include_file( 'importers/class-kr-widget-importer.php' );
-			$this->include_file( 'importers/class-kr-customizer-importer.php' );
-			$this->include_file( 'importers/class-kr-elementor-importer.php' );
-			
-			// Admin classes (only in admin)
-			if ( is_admin() ) {
-				$this->include_file( 'admin/class-kr-admin.php' );
-				$this->include_file( 'admin/class-kr-ajax.php' );
-			}
+	private function includes() {
+		// Load from includes directory (not classes directory)
+		$includes_dir = KR_TOOLKIT_DIR . 'includes/';
+		
+		if ( file_exists( $includes_dir . 'class-child-theme-manager.php' ) ) {
+			require_once $includes_dir . 'class-child-theme-manager.php';
 		}
-
-		/**
+		if ( file_exists( $includes_dir . 'class-demo-importer.php' ) ) {
+			require_once $includes_dir . 'class-demo-importer.php';
+		}
+		if ( file_exists( $includes_dir . 'class-system-requirements.php' ) ) {
+			require_once $includes_dir . 'class-system-requirements.php';
+		}
+		if ( file_exists( $includes_dir . 'class-license-manager.php' ) ) {
+			require_once $includes_dir . 'class-license-manager.php';
+		}
+		if ( file_exists( $includes_dir . 'helpers.php' ) ) {
+			require_once $includes_dir . 'helpers.php';
+		}
+		
+		// Admin classes (only in admin)
+		if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'inc/admin/class-admin.php' ) ) {
+			require_once KR_TOOLKIT_DIR . 'inc/admin/class-admin.php';
+		}
+	}		/**
 		 * Safe file include with error handling
 		 *
 		 * @param string $file_path Relative path from inc/ directory
