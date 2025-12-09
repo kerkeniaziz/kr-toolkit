@@ -39,6 +39,7 @@ class KR_Toolkit_Admin {
 		add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_assets' ) );
 		add_action( 'admin_init', array( $this, 'welcome_redirect' ) );
+		add_action( 'admin_init', array( $this, 'register_settings' ) );
 		add_action( 'admin_notices', array( $this, 'admin_notices' ) );
 	}
 
@@ -99,6 +100,15 @@ class KR_Toolkit_Admin {
 			'manage_options',
 			'kr-toolkit-license',
 			array( $this, 'render_license_page' )
+		);
+
+		add_submenu_page(
+			'kr-toolkit-dashboard',
+			__( 'Settings', 'kr-toolkit' ),
+			__( 'Settings', 'kr-toolkit' ),
+			'manage_options',
+			'kr-toolkit-settings',
+			array( $this, 'render_settings_page' )
 		);
 	}
 
@@ -208,4 +218,20 @@ class KR_Toolkit_Admin {
 	public function render_license_page() {
 		include KR_TOOLKIT_PATH . 'admin/views/license.php';
 	}
+
+	/**
+	 * Render settings page
+	 */
+	public function render_settings_page() {
+		include KR_TOOLKIT_PATH . 'admin/views/settings.php';
+	}
+
+	/**
+	 * Register settings
+	 */
+	public function register_settings() {
+		register_setting( 'kr_toolkit_settings', 'kr_auto_update_plugin' );
+		register_setting( 'kr_toolkit_settings', 'kr_auto_update_theme' );
+	}
 }
+

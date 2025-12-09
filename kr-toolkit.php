@@ -3,7 +3,7 @@
  * Plugin Name: KR Toolkit
  * Plugin URI: https://krtheme.com
  * Description: Essential companion plugin for KR Theme. Features one-click demo import, child theme manager, license management, and system requirements checker. Unlock the full potential of KR Theme with this powerful toolkit.
- * Version: 1.3.0
+ * Version: 1.2.7
  * Author: Aziz Kerkeni
  * Author URI: https://www.kerkeniaziz.ovh/
  * License: GPL v2 or later
@@ -16,7 +16,7 @@
  * Copyright: 2015-2025 Aziz Kerkeni
  *
  * @package KR_Toolkit
- * @since 1.3.0
+ * @since 1.2.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -56,6 +56,41 @@ function kr_toolkit_init() {
  * Start the plugin
  */
 add_action( 'plugins_loaded', 'kr_toolkit_init' );
+
+/**
+ * Initialize Auto-Updates
+ */
+add_action( 'plugins_loaded', 'kr_toolkit_init_auto_updates' );
+
+function kr_toolkit_init_auto_updates() {
+	// Check if auto-updates are enabled
+	$plugin_enabled = get_option( 'kr_auto_update_plugin', '1' );
+	$theme_enabled = get_option( 'kr_auto_update_theme', '1' );
+	
+	// Load Plugin Update Checker for plugin if enabled
+	if ( $plugin_enabled === '1' && file_exists( KR_TOOLKIT_DIR . 'inc/libraries/plugin-update-checker/plugin-update-checker.php' ) ) {
+		require KR_TOOLKIT_DIR . 'inc/libraries/plugin-update-checker/plugin-update-checker.php';
+		
+		$pluginUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://github.com/kerkeniaziz/kr-toolkit/',
+			__FILE__,
+			'kr-toolkit'
+		);
+		$pluginUpdateChecker->setBranch( 'main' );
+	}
+	
+	// Load Theme Update Checker if enabled
+	if ( $theme_enabled === '1' && file_exists( KR_TOOLKIT_DIR . 'inc/libraries/plugin-update-checker/plugin-update-checker.php' ) ) {
+		require_once KR_TOOLKIT_DIR . 'inc/libraries/plugin-update-checker/plugin-update-checker.php';
+		
+		$themeUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+			'https://github.com/kerkeniaziz/kr-theme/',
+			get_template_directory() . '/style.css',
+			'kr-theme'
+		);
+		$themeUpdateChecker->setBranch( 'main' );
+	}
+}
 
 /**
  * Activation Hook
