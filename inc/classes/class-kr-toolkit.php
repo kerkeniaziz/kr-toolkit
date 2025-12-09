@@ -97,10 +97,14 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		}
 		
 		// Admin classes (only in admin)
-		if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'inc/admin/class-admin.php' ) ) {
-			require_once KR_TOOLKIT_DIR . 'inc/admin/class-admin.php';
+		if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'admin/class-admin.php' ) ) {
+			require_once KR_TOOLKIT_DIR . 'admin/class-admin.php';
+			// Initialize admin
+			KR_Toolkit_Admin::instance();
 		}
-	}		/**
+	}
+
+	/**
 		 * Safe file include with error handling
 		 *
 		 * @param string $file_path Relative path from inc/ directory
@@ -434,6 +438,6 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		/**
 		 * Prevent unserialization
 		 */
-		private function __wakeup() {}
+		public function __wakeup() {}
 	}
 }
