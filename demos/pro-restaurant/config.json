@@ -1,0 +1,29 @@
+{
+	"name": "Pro Restaurant",
+	"slug": "pro-restaurant",
+	"description": "A premium restaurant template with online menu, reservations, and elegant design. Perfect for restaurants, cafes, and food businesses.",
+	"screenshot": "screenshot.png",
+	"demo_url": "https://demo.krtheme.com/pro-restaurant",
+	"is_pro": true,
+	"category": ["restaurant", "food", "business"],
+	"required_plugins": [
+		{
+			"name": "Elementor Pro",
+			"slug": "elementor-pro",
+			"required": true
+		},
+		{
+			"name": "WooCommerce",
+			"slug": "woocommerce",
+			"required": false
+		}
+	],
+	"features": [
+		"Online Menu",
+		"Reservation System",
+		"Gallery Section",
+		"Chef Profile",
+		"Location Map",
+		"Social Media Integration"
+	]
+}

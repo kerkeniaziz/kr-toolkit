@@ -1,0 +1,23 @@
+{
+	"name": "Free Portfolio",
+	"slug": "free-portfolio",
+	"description": "A stunning portfolio template perfect for showcasing your creative work. Ideal for designers, photographers, and freelancers.",
+	"screenshot": "screenshot.png",
+	"demo_url": "https://demo.krtheme.com/free-portfolio",
+	"is_pro": false,
+	"category": ["portfolio", "creative"],
+	"required_plugins": [
+		{
+			"name": "Elementor",
+			"slug": "elementor",
+			"required": true
+		}
+	],
+	"features": [
+		"Gallery Layouts",
+		"Project Showcase",
+		"About Section",
+		"Contact Form",
+		"Responsive Design"
+	]
+}

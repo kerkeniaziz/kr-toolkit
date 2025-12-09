@@ -1,0 +1,28 @@
+{
+	"name": "Free Business",
+	"slug": "free-business",
+	"description": "A professional business starter template with modern design. Perfect for corporate websites, agencies, and startups.",
+	"screenshot": "screenshot.png",
+	"demo_url": "https://demo.krtheme.com/free-business",
+	"is_pro": false,
+	"category": ["business", "corporate"],
+	"required_plugins": [
+		{
+			"name": "Elementor",
+			"slug": "elementor",
+			"required": true
+		},
+		{
+			"name": "Contact Form 7",
+			"slug": "contact-form-7",
+			"required": false
+		}
+	],
+	"features": [
+		"Responsive Design",
+		"One Page Layout",
+		"Contact Form",
+		"Service Sections",
+		"Team Section"
+	]
+}
