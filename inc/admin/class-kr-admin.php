@@ -80,7 +80,7 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 				__( 'Dashboard', 'kr-toolkit' ),
 				__( 'Dashboard', 'kr-toolkit' ),
 				'manage_options',
-				'kr-toolkit',
+				'kr-toolkit-dashboard',
 				array( $this, 'dashboard_page' )
 			);
 
@@ -132,6 +132,16 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 				'install_themes',
 				'kr-toolkit-child-theme',
 				array( $this, 'child_theme_page' )
+			);
+
+			// Test Updates
+			add_submenu_page(
+				'kr-toolkit',
+				__( 'Test Updates', 'kr-toolkit' ),
+				__( 'Test Updates', 'kr-toolkit' ),
+				'manage_options',
+				'kr-toolkit-test-updates',
+				array( $this, 'test_updates_page' )
 			);
 
 			// System Info
@@ -248,6 +258,13 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 		 */
 		public function footer_builder_page() {
 			include KR_TOOLKIT_DIR . 'admin/views/footer-builder.php';
+		}
+
+		/**
+		 * Test Updates page
+		 */
+		public function test_updates_page() {
+			include KR_TOOLKIT_DIR . 'admin/views/test-updates.php';
 		}
 
 		/**

@@ -92,11 +92,11 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		if ( file_exists( $includes_dir . 'class-license-manager.php' ) ) {
 			require_once $includes_dir . 'class-license-manager.php';
 		}
-		if ( file_exists( $includes_dir . 'class-header-footer-builder.php' ) ) {
-			require_once $includes_dir . 'class-header-footer-builder.php';
-			// Initialize header/footer builder
-			new KR_Header_Footer_Builder();
-		}
+		// DISABLED: Header/Footer Builder - Using menu items in KR_Admin instead
+		// if ( file_exists( $includes_dir . 'class-header-footer-builder.php' ) ) {
+		// 	require_once $includes_dir . 'class-header-footer-builder.php';
+		// 	new KR_Header_Footer_Builder();
+		// }
 		if ( file_exists( $includes_dir . 'class-elementor-widgets.php' ) ) {
 			require_once $includes_dir . 'class-elementor-widgets.php';
 		}
@@ -112,12 +112,11 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 			require_once $includes_dir . 'helpers.php';
 		}
 		
-		// Admin classes (only in admin)
-		if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'admin/class-admin.php' ) ) {
-			require_once KR_TOOLKIT_DIR . 'admin/class-admin.php';
-			// Initialize admin
-			KR_Toolkit_Admin::instance();
-		}
+		// Admin classes (only in admin) - Using new KR_Admin from inc/admin/
+		// OLD CLASS DISABLED: if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'admin/class-admin.php' ) ) {
+		// 	require_once KR_TOOLKIT_DIR . 'admin/class-admin.php';
+		// 	KR_Toolkit_Admin::instance();
+		// }
 	}
 
 	/**
@@ -373,7 +372,7 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 			}
 
 			// Redirect to KR Toolkit dashboard page
-			$redirect_url = admin_url( 'admin.php?page=kr-toolkit' );
+			$redirect_url = admin_url( 'admin.php?page=kr-toolkit-dashboard' );
 			wp_safe_redirect( $redirect_url );
 			exit;
 		}
