@@ -113,6 +113,12 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		}
 		
 		// Admin classes (only in admin) - Using new KR_Admin from inc/admin/
+		if ( is_admin() ) {
+			if ( file_exists( KR_TOOLKIT_DIR . 'inc/admin/class-kr-admin.php' ) ) {
+				require_once KR_TOOLKIT_DIR . 'inc/admin/class-kr-admin.php';
+				KR_Admin::instance();
+			}
+		}
 		// OLD CLASS DISABLED: if ( is_admin() && file_exists( KR_TOOLKIT_DIR . 'admin/class-admin.php' ) ) {
 		// 	require_once KR_TOOLKIT_DIR . 'admin/class-admin.php';
 		// 	KR_Toolkit_Admin::instance();

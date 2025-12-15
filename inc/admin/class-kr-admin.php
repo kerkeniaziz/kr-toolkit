@@ -62,39 +62,39 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 		/**
 		 * Register admin menu
 		 */
-		public function register_menu() {
-			// Main menu page
-			add_menu_page(
-				__( 'KR Toolkit', 'kr-toolkit' ),
-				__( 'KR Toolkit', 'kr-toolkit' ),
-				'manage_options',
-				'kr-toolkit',
-				array( $this, 'dashboard_page' ),
-				'dashicons-download',
-				59
-			);
+	public function register_menu() {
+		// Main menu page - Shows Dashboard
+		add_menu_page(
+			__( 'KR Toolkit', 'kr-toolkit' ),
+			__( 'KR Toolkit', 'kr-toolkit' ),
+			'manage_options',
+			'kr-toolkit',
+			'', // Empty callback - WordPress will show first submenu
+			'dashicons-download',
+			59
+		);
 
-			// Dashboard submenu
-			add_submenu_page(
-				'kr-toolkit',
-				__( 'Dashboard', 'kr-toolkit' ),
-				__( 'Dashboard', 'kr-toolkit' ),
-				'manage_options',
-				'kr-toolkit-dashboard',
-				array( $this, 'dashboard_page' )
-			);
+		// Dashboard submenu
+		add_submenu_page(
+			'kr-toolkit',
+			__( 'Dashboard', 'kr-toolkit' ),
+			__( 'Dashboard', 'kr-toolkit' ),
+			'manage_options',
+			'kr-toolkit-dashboard',
+			array( $this, 'dashboard_page' )
+		);
 
-			// Theme Options
-			add_submenu_page(
-				'kr-toolkit',
-				__( 'Theme Options', 'kr-toolkit' ),
-				__( 'Theme Options', 'kr-toolkit' ),
-				'manage_options',
-				'kr-toolkit-theme-options',
-				array( $this, 'theme_options_page' )
-			);
+		// Theme Options
+		add_submenu_page(
+			'kr-toolkit',
+			__( 'Theme Options', 'kr-toolkit' ),
+			__( 'Theme Options', 'kr-toolkit' ),
+			'manage_options',
+			'kr-toolkit-theme-options',
+			array( $this, 'theme_options_page' )
+		);
 
-			// Header Builder
+		// Header Builder
 			add_submenu_page(
 				'kr-toolkit',
 				__( 'Header Builder', 'kr-toolkit' ),
@@ -199,12 +199,22 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 		 * Dashboard page
 		 */
 		public function dashboard_page() {
+			// Check if view file exists
+			$view_file = KR_TOOLKIT_DIR . 'admin/views/dashboard.php';
+			
+			if ( ! file_exists( $view_file ) ) {
+				echo '<div class="wrap"><h1>Error: Dashboard view file not found</h1></div>';
+				return;
+			}
+			
+			// Set up data for the view
 			$system_check = KR_System_Check::instance();
 			$system_summary = $system_check->get_status_summary();
 			$child_theme_manager = KR_Child_Theme::instance();
 			$child_theme_status = $child_theme_manager->get_child_theme_status();
 
-			include KR_TOOLKIT_DIR . 'admin/views/dashboard.php';
+			// Include the view
+			include $view_file;
 		}
 
 		/**
