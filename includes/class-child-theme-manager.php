@@ -107,8 +107,8 @@ class KR_Child_Theme_Manager {
 Theme Name:   {$theme_name}
 Theme URI:    https://krtheme.com
 Description:  Child theme for KR Theme
-Author:       Aziz Kerkeni
-Author URI:   https://www.kerkeniaziz.ovh/
+Author:       KR Theme
+Author URI:   https://www.krtheme.com/
 Template:     kr-theme
 Version:      1.0.0
 License:      GNU General Public License v2 or later
@@ -206,7 +206,7 @@ For support, visit https://krtheme.com/support
 
 ## Copyright
 
-Copyright © 2015-" . date('Y') . " Aziz Kerkeni. All rights reserved.
+Copyright © " . date('Y') . " KR Theme. All rights reserved.
 ";
 
 		file_put_contents( $theme_dir . '/readme.md', $content );

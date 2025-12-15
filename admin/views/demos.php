@@ -145,11 +145,11 @@ $import_warning = get_transient( 'kr_toolkit_import_warning' );
 				esc_html__( '%1$s v%2$s - Developed by %3$s', 'kr-toolkit' ),
 				'<strong>KR Toolkit</strong>',
 				KR_TOOLKIT_VERSION,
-				'<a href="https://www.kerkeniaziz.ovh/" target="_blank" rel="noopener">Aziz Kerkeni</a>'
+				'<a href="https://www.krtheme.com/" target="_blank" rel="noopener">KR Theme</a>'
 			);
 			?>
 			<br>
-			<small><?php esc_html_e( 'Copyright © 2015-2025 Aziz Kerkeni. All rights reserved.', 'kr-toolkit' ); ?></small>
+			<small><?php printf( esc_html__( 'Copyright © %s KR Theme. All rights reserved.', 'kr-toolkit' ), date( 'Y' ) ); ?></small>
 		</p>
 	</div>
 </div>

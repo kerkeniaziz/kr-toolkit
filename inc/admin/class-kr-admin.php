@@ -84,6 +84,36 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 				array( $this, 'dashboard_page' )
 			);
 
+			// Theme Options
+			add_submenu_page(
+				'kr-toolkit',
+				__( 'Theme Options', 'kr-toolkit' ),
+				__( 'Theme Options', 'kr-toolkit' ),
+				'manage_options',
+				'kr-toolkit-theme-options',
+				array( $this, 'theme_options_page' )
+			);
+
+			// Header Builder
+			add_submenu_page(
+				'kr-toolkit',
+				__( 'Header Builder', 'kr-toolkit' ),
+				__( 'Header Builder', 'kr-toolkit' ),
+				'manage_options',
+				'kr-toolkit-header-builder',
+				array( $this, 'header_builder_page' )
+			);
+
+			// Footer Builder
+			add_submenu_page(
+				'kr-toolkit',
+				__( 'Footer Builder', 'kr-toolkit' ),
+				__( 'Footer Builder', 'kr-toolkit' ),
+				'manage_options',
+				'kr-toolkit-footer-builder',
+				array( $this, 'footer_builder_page' )
+			);
+
 			// Demo Library
 			add_submenu_page(
 				'kr-toolkit',
@@ -197,6 +227,27 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 			$system_report = $system_check->get_system_report();
 
 			include KR_TOOLKIT_DIR . 'admin/views/system-info.php';
+		}
+
+		/**
+		 * Theme Options page
+		 */
+		public function theme_options_page() {
+			include KR_TOOLKIT_DIR . 'admin/views/theme-options.php';
+		}
+
+		/**
+		 * Header Builder page
+		 */
+		public function header_builder_page() {
+			include KR_TOOLKIT_DIR . 'admin/views/header-builder.php';
+		}
+
+		/**
+		 * Footer Builder page
+		 */
+		public function footer_builder_page() {
+			include KR_TOOLKIT_DIR . 'admin/views/footer-builder.php';
 		}
 
 		/**

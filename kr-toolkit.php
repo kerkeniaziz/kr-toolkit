@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: KR Toolkit
- * Plugin URI: https://krtheme.com
+ * Plugin URI: https://www.krtheme.com
  * Description: Essential companion plugin for KR Theme. Features one-click demo import, child theme manager, license management, and system requirements checker. Unlock the full potential of KR Theme with this powerful toolkit.
- * Version: 1.2.8
- * Author: krtheme.com
- * Author URI: https://krtheme.com
+ * Version: 1.3.1
+ * Author: KR Theme
+ * Author URI: https://www.krtheme.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: kr-toolkit
@@ -13,10 +13,10 @@
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * 
- * Copyright: 2025 krtheme.com
+ * Copyright: 2025 KR Theme
  *
  * @package KR_Toolkit
- * @since 1.2.7
+ * @since 1.3.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define Constants
 if ( ! defined( 'KR_TOOLKIT_VERSION' ) ) {
-	define( 'KR_TOOLKIT_VERSION', '1.2.8' );
+	define( 'KR_TOOLKIT_VERSION', '1.3.1' );
 }
 if ( ! defined( 'KR_TOOLKIT_FILE' ) ) {
 	define( 'KR_TOOLKIT_FILE', __FILE__ );

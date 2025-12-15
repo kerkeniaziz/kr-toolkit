@@ -128,7 +128,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Build custom headers with an intuitive drag & drop interface.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 			'footer-builder' => sprintf(
@@ -144,7 +144,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Create stunning footers with advanced customization options.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 			'typography' => sprintf(
@@ -160,7 +160,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Complete control over typography with advanced font options.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 			'performance' => sprintf(
@@ -176,7 +176,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Boost your site speed with performance optimization features.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 			'woocommerce' => sprintf(
@@ -192,7 +192,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Extended WooCommerce features for better online stores.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 			'widgets' => sprintf(
@@ -208,7 +208,7 @@ class KR_Customizer_Extensions {
 					<a href="%s" target="_blank" class="button button-primary">%s</a>
 				</div>',
 				__( 'Custom widgets to enhance your site with rich content.', 'kr-toolkit' ),
-				'https://kerkeni.com/kr-theme-pro',
+				'https://www.krtheme.com/pro',
 				__( 'Upgrade to Pro', 'kr-toolkit' )
 			),
 		);

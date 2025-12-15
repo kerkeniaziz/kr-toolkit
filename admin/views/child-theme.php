@@ -233,11 +233,11 @@ $child_theme_info = $has_child_theme ? $child_theme_manager->get_child_theme_inf
 				esc_html__( '%1$s v%2$s - Developed by %3$s', 'kr-toolkit' ),
 				'<strong>KR Toolkit</strong>',
 				KR_TOOLKIT_VERSION,
-				'<a href="https://www.kerkeniaziz.ovh/" target="_blank" rel="noopener">Aziz Kerkeni</a>'
+				'<a href="https://www.krtheme.com/" target="_blank" rel="noopener">KR Theme</a>'
 			);
 			?>
 			<br>
-			<small><?php esc_html_e( 'Copyright © 2015-2025 Aziz Kerkeni. All rights reserved.', 'kr-toolkit' ); ?></small>
+			<small><?php esc_html_e( 'Copyright © 2025 KR Theme. All rights reserved.', 'kr-toolkit' ); ?></small>
 		</p>
 	</div>
 </div>

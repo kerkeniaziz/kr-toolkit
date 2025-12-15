@@ -92,6 +92,22 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		if ( file_exists( $includes_dir . 'class-license-manager.php' ) ) {
 			require_once $includes_dir . 'class-license-manager.php';
 		}
+		if ( file_exists( $includes_dir . 'class-header-footer-builder.php' ) ) {
+			require_once $includes_dir . 'class-header-footer-builder.php';
+			// Initialize header/footer builder
+			new KR_Header_Footer_Builder();
+		}
+		if ( file_exists( $includes_dir . 'class-elementor-widgets.php' ) ) {
+			require_once $includes_dir . 'class-elementor-widgets.php';
+		}
+		if ( file_exists( $includes_dir . 'class-woocommerce-widgets.php' ) ) {
+			require_once $includes_dir . 'class-woocommerce-widgets.php';
+		}
+		if ( file_exists( $includes_dir . 'wp-widgets/class-kr-wp-widgets.php' ) ) {
+			require_once $includes_dir . 'wp-widgets/class-kr-wp-widgets.php';
+			// Initialize WordPress widgets
+			new KR_WP_Widgets();
+		}
 		if ( file_exists( $includes_dir . 'helpers.php' ) ) {
 			require_once $includes_dir . 'helpers.php';
 		}
@@ -340,14 +356,22 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		 * Welcome Redirect
 		 */
 		public function welcome_redirect() {
-			if ( get_transient( 'kr_toolkit_activation_redirect' ) ) {
-				delete_transient( 'kr_toolkit_activation_redirect' );
-				
-				if ( ! is_network_admin() && ! isset( $_GET['activate-multi'] ) ) {
-					wp_safe_redirect( admin_url( 'admin.php?page=kr-toolkit' ) );
-					exit;
-				}
+			// Check if activation redirect transient is set
+			if ( ! get_transient( 'kr_toolkit_activation_redirect' ) ) {
+				return;
 			}
+
+			// Delete transient after first check
+			delete_transient( 'kr_toolkit_activation_redirect' );
+			
+			// Skip redirect on multisite activation or activate-multi parameter
+			if ( is_network_admin() || isset( $_GET['activate-multi'] ) ) {
+				return;
+			}
+
+			// Redirect to KR Toolkit dashboard page
+			wp_safe_redirect( admin_url( 'admin.php?page=kr-toolkit' ) );
+			exit;
 		}
 
 		/**
