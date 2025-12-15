@@ -138,3 +138,6 @@ function kr_toolkit_deactivate() {
 function kr_toolkit() {
 	return KR_Toolkit::instance();
 }
+
+// Load Header/Footer CPTs
+require_once KR_TOOLKIT_DIR . 'inc/classes/class-kr-header-footer-cpt.php';
