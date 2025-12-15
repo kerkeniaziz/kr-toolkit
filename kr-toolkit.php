@@ -3,7 +3,7 @@
  * Plugin Name: KR Toolkit
  * Plugin URI: https://www.krtheme.com
  * Description: Essential companion plugin for KR Theme. Features one-click demo import, child theme manager, license management, and system requirements checker. Unlock the full potential of KR Theme with this powerful toolkit.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Author: KR Theme
  * Author URI: https://www.krtheme.com
  * License: GPL v2 or later
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define Constants
 if ( ! defined( 'KR_TOOLKIT_VERSION' ) ) {
-	define( 'KR_TOOLKIT_VERSION', '1.3.1' );
+	define( 'KR_TOOLKIT_VERSION', '1.3.2' );
 }
 if ( ! defined( 'KR_TOOLKIT_FILE' ) ) {
 	define( 'KR_TOOLKIT_FILE', __FILE__ );
@@ -101,8 +101,8 @@ function kr_toolkit_init_auto_updates() {
 register_activation_hook( __FILE__, 'kr_toolkit_activate' );
 
 function kr_toolkit_activate() {
-	// Set transient for welcome redirect
-	set_transient( 'kr_toolkit_activation_redirect', true, 30 );
+	// Set transient for welcome redirect - 2 minutes timeout
+	set_transient( 'kr_toolkit_activation_redirect', true, 120 );
 	
 	// Create default options
 	$defaults = array(

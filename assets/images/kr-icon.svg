@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+    <!-- Gradient Definition -->
+    <defs>
+        <linearGradient id="krGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="192" height="192" fill="#f8fafc" />
+
+    <!-- Main Container -->
+    <g id="kr-logo">
+        <!-- Letter K -->
+        <g transform="translate(40, 40)">
+            <!-- K Vertical Bar -->
+            <rect x="0" y="0" width="16" height="112" rx="8" fill="url(#krGradient)" />
+
+            <!-- K Top Diagonal -->
+            <line x1="16" y1="30" x2="56" y2="56" stroke="url(#krGradient)" stroke-width="16" stroke-linecap="round" />
+
+            <!-- K Bottom Diagonal -->
+            <line x1="56" y1="56" x2="16" y2="112" stroke="url(#krGradient)" stroke-width="16" stroke-linecap="round" />
+        </g>
+
+        <!-- Letter R -->
+        <g transform="translate(96, 40)">
+            <!-- R Vertical Bar -->
+            <rect x="0" y="0" width="16" height="112" rx="8" fill="url(#krGradient)" />
+
+            <!-- R Curved Top -->
+            <path d="M 16 20 Q 48 20 48 44 Q 48 60 24 68" stroke="url(#krGradient)" stroke-width="16" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+
+            <!-- R Diagonal Leg -->
+            <line x1="24" y1="68" x2="48" y2="112" stroke="url(#krGradient)" stroke-width="16" stroke-linecap="round" />
+        </g>
+    </g>
+</svg>

@@ -355,6 +355,9 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		/**
 		 * Welcome Redirect
 		 */
+		/**
+		 * Welcome Redirect on Activation
+		 */
 		public function welcome_redirect() {
 			// Check if activation redirect transient is set
 			if ( ! get_transient( 'kr_toolkit_activation_redirect' ) ) {
@@ -370,7 +373,8 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 			}
 
 			// Redirect to KR Toolkit dashboard page
-			wp_safe_redirect( admin_url( 'admin.php?page=kr-toolkit' ) );
+			$redirect_url = admin_url( 'admin.php?page=kr-toolkit' );
+			wp_safe_redirect( $redirect_url );
 			exit;
 		}
 
