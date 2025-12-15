@@ -50,18 +50,20 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 			add_action( 'admin_head', array( $this, 'admin_head' ) );
 		}
 
-		/**
-		 * Admin initialization
-		 */
-		public function admin_init() {
-			// Run system check on admin init
+	/**
+	 * Admin initialization
+	 */
+	public function admin_init() {
+		// Run system check on admin init
+		if ( class_exists( 'KR_System_Check' ) ) {
 			$system_check = KR_System_Check::instance();
 			$system_check->run_checks();
 		}
+	}
 
-		/**
-		 * Register admin menu
-		 */
+	/**
+	 * Register admin menu
+	 */
 	public function register_menu() {
 		// Main menu page - Shows Dashboard
 		add_menu_page(

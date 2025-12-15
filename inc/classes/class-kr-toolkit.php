@@ -77,6 +77,19 @@ if ( ! class_exists( 'KR_Toolkit' ) ) {
 		 * Include Files - Load in correct order with error handling
 		 */
 	private function includes() {
+		// Load classes from inc/classes directory
+		$classes_dir = KR_TOOLKIT_DIR . 'inc/classes/';
+		
+		if ( file_exists( $classes_dir . 'class-kr-system-check.php' ) ) {
+			require_once $classes_dir . 'class-kr-system-check.php';
+		}
+		if ( file_exists( $classes_dir . 'class-kr-importer.php' ) ) {
+			require_once $classes_dir . 'class-kr-importer.php';
+		}
+		if ( file_exists( $classes_dir . 'class-kr-child-theme.php' ) ) {
+			require_once $classes_dir . 'class-kr-child-theme.php';
+		}
+		
 		// Load from includes directory (not classes directory)
 		$includes_dir = KR_TOOLKIT_DIR . 'includes/';
 		
