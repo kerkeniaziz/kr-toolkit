@@ -141,3 +141,6 @@ function kr_toolkit() {
 
 // Load Header/Footer CPTs
 require_once KR_TOOLKIT_DIR . 'inc/classes/class-kr-header-footer-cpt.php';
+
+// Load Header/Footer Builder
+require_once KR_TOOLKIT_DIR . 'includes/class-header-footer-builder.php';

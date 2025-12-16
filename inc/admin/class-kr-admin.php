@@ -255,21 +255,27 @@ if ( ! class_exists( 'KR_Admin' ) ) {
 		 * Theme Options page
 		 */
 		public function theme_options_page() {
-			include KR_TOOLKIT_DIR . 'admin/views/theme-options.php';
+			// Redirect to Redux Theme Options panel
+			wp_safe_redirect( admin_url( 'admin.php?page=kr_theme_options' ) );
+			exit;
 		}
 
 		/**
 		 * Header Builder page
 		 */
 		public function header_builder_page() {
-			include KR_TOOLKIT_DIR . 'admin/views/header-builder.php';
+			// Redirect to Header CPT edit screen
+			wp_safe_redirect( admin_url( 'edit.php?post_type=kr_header' ) );
+			exit;
 		}
 
 		/**
 		 * Footer Builder page
 		 */
 		public function footer_builder_page() {
-			include KR_TOOLKIT_DIR . 'admin/views/footer-builder.php';
+			// Redirect to Footer CPT edit screen
+			wp_safe_redirect( admin_url( 'edit.php?post_type=kr_footer' ) );
+			exit;
 		}
 
 		/**

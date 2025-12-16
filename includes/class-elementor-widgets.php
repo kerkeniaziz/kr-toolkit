@@ -42,6 +42,14 @@ if ( ! class_exists( 'KR_Elementor_Widgets' ) ) {
 					'icon'  => 'fa fa-plug',
 				)
 			);
+
+			$elements_manager->add_category(
+				'krtheme-header',
+				array(
+					'title' => esc_html__( 'KR Header', 'kr-toolkit' ),
+					'icon'  => 'fa fa-plug',
+				)
+			);
 		}
 
 		/**
@@ -60,6 +68,8 @@ if ( ! class_exists( 'KR_Elementor_Widgets' ) ) {
 				'image-gallery',
 				'divider',
 				'social',
+				'site-logo',
+				'navigation-menu',
 			);
 
 			foreach ( $widgets as $widget ) {

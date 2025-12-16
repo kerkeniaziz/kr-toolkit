@@ -110,6 +110,30 @@ class KR_Toolkit_Admin {
 			'kr-toolkit-settings',
 			array( $this, 'render_settings_page' )
 		);
+
+		add_submenu_page(
+			'kr-toolkit-dashboard',
+			__( 'Theme Options', 'kr-toolkit' ),
+			__( 'Theme Options', 'kr-toolkit' ),
+			'manage_options',
+			'admin.php?page=kr_theme_options'
+		);
+
+		add_submenu_page(
+			'kr-toolkit-dashboard',
+			__( 'Header Builder', 'kr-toolkit' ),
+			__( 'Header Builder', 'kr-toolkit' ),
+			'manage_options',
+			'edit.php?post_type=kr_header'
+		);
+
+		add_submenu_page(
+			'kr-toolkit-dashboard',
+			__( 'Footer Builder', 'kr-toolkit' ),
+			__( 'Footer Builder', 'kr-toolkit' ),
+			'manage_options',
+			'edit.php?post_type=kr_footer'
+		);
 	}
 
 	/**
@@ -234,4 +258,3 @@ class KR_Toolkit_Admin {
 		register_setting( 'kr_toolkit_settings', 'kr_auto_update_theme' );
 	}
 }
-
