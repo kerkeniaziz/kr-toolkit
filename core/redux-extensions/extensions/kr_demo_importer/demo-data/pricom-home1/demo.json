@@ -1,0 +1,10 @@
+{
+  "id": "pricom-home1",
+  "name": "Pricom Home 1",
+  "description": "Professional business demo with header and footer builders",
+  "category": "business",
+  "image": "screen-image.png",
+  "preview_url": "https://demo.pricom.local",
+  "pro": false,
+  "files": ["content.xml", "theme-options.json", "widgets.json"]
+}

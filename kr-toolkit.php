@@ -3,7 +3,7 @@
  * Plugin Name: KR Toolkit
  * Plugin URI: https://www.krtheme.com
  * Description: Essential companion plugin for KR Theme. Features one-click demo import, child theme manager, license management, and system requirements checker. Unlock the full potential of KR Theme with this powerful toolkit.
- * Version: 1.3.7
+ * Version: 2.0.2
  * Author: KR Theme
  * Author URI: https://www.krtheme.com
  * License: GPL v2 or later
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Define Constants
 if ( ! defined( 'KR_TOOLKIT_VERSION' ) ) {
-	define( 'KR_TOOLKIT_VERSION', '1.3.7' );
+	define( 'KR_TOOLKIT_VERSION', '2.0.2' );
 }
 if ( ! defined( 'KR_TOOLKIT_FILE' ) ) {
 	define( 'KR_TOOLKIT_FILE', __FILE__ );
@@ -144,3 +144,6 @@ require_once KR_TOOLKIT_DIR . 'inc/classes/class-kr-header-footer-cpt.php';
 
 // Load Header/Footer Builder
 require_once KR_TOOLKIT_DIR . 'includes/class-header-footer-builder.php';
+
+// Load Redux Extension - Demo Importer
+require_once KR_TOOLKIT_DIR . 'core/redux-extensions/extensions/kr_demo_importer/loader.php';
